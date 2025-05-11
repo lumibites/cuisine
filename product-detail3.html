@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donut Gula - LumiBites</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/product-detail.css">
+    <style>
+        .btn-wa {
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-wa:hover {
+            background-color: #20b955;
+        }
+
+        .variation {
+            margin-top: 30px;
+          }
+          
+          .variation h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+          }
+          
+          .flavor-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+          }
+          
+          .flavor-option {
+            padding: 10px 20px;
+            border: 2px solid #ddd;
+            background-color: #fff;
+            color: #333;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+          
+          .flavor-option:hover {
+            border-color: #ff8a00;
+            background-color: #fff6e5;
+            color: #ff8a00;
+          }
+          
+          .flavor-option.active {
+            background-color: #181817;
+            border-color: #2d2c2a;
+            color: #fff;
+          }
+          .main-image .imge{
+            width: 500px;
+            height: 500px;
+
+        }
+
+        .main-image{
+            width: 500;
+            height: 500px;
+        }
+        .product-card {
+            width:auto; /* atau atur sesuai kebutuhan */
+            height:auto ;
+            flex-direction: column;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <!-- Header content -->
+</header>
+
+<main class="product-detail-page">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <a href="products.html">Menu</a> / 
+            <span>Donut Gula</span>
+        </div>
+
+        <div class="product-detail-container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="assets/img/produk3.jpg" alt="Donut Gula" id="main-product-image">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-title">Donut Gula</h1>
+
+                <div class="product-price">
+                    <span class="current-price">Rp 12.000</span>
+                </div>
+
+                <div class="product-description">
+                    <p>Donat klasik dengan taburan gula halus yang manis dan lembut di setiap gigitan, teksturnya yang empuk dan lembut cocok dinikmati kapan saja, terbuat dari ubi ungu yang kaya antioksidan dan sehat untuk tubuh</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Tekstur lembut dan empuk</li>
+                        <li><i class="fas fa-check"></i> Taburan gula premium</li>
+                        <li><i class="fas fa-check"></i> Digoreng dengan suhu yang pas</li>
+                    </ul>
+                </div>
+
+                <div class="product-variations">
+                    <div class="variation">
+                        <h3>Varian Rasa:</h3>
+                        <div class="flavor-options">
+                            <button class="flavor-option active" data-flavor="Vanilla">Vanilla</button>
+                            <button class="flavor-option" data-flavor="Greentea">Greentea</button>
+                            <button class="flavor-option" data-flavor="Strawberry">Strawberry</button>
+                            <button class="flavor-option" data-flavor="Red Velvet">Red Velvet</button>
+                        </div>
+                    </div>
+
+                    <div class="variation">
+                        <h3>Jumlah:</h3>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus" type="button"><i class="fas fa-minus"></i></button>
+                            <input type="number" id="qty" value="1" min="1" max="12">
+                            <button class="quantity-btn plus" type="button"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <button class="btn-wa" onclick="sendToWhatsApp()">
+                        <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-tabs">
+            <ul class="tab-nav">
+                <li class="active" data-tab="description">Deskripsi</li>
+            </ul>
+
+            <div class="tab-content active" id="description">
+                <h2>Deskripsi Produk</h2>
+                <p>Donut Gula dari <strong>Lumibites</strong> adalah donat klasik yang tak pernah salah. Dibalut dengan taburan gula halus.</p>
+                <ul class="product-features">
+                    <li><i class="fas fa-check-circle"></i> Gula premium lembut</li>
+                    <li><i class="fas fa-check-circle"></i> Tanpa pengawet</li>
+                    <li><i class="fas fa-check-circle"></i> Cocok untuk segala usia</li>
+                </ul>
+                <p>Tersedia dalam empat varian rasa favorit: Vanilla, Greentea, Strawberry, dan Red Velvet.</p>
+            </div>
+        </div>
+
+        <section class="related-products">
+            <h2 class="section-title">Anda Mungkin Juga Suka</h2>
+            <div class="products-grid">
+                <!-- Produk terkait akan dimuat di sini -->
+                  <!-- Product Card 2 - Donat Coklat -->
+            <div class="product-card">
+                <a href="product-detail1.html" class="product-link">
+                    <div class="product-thumb">
+                        <img src="assets/img/produk1.jpg" alt="Donat Coklat">
+                        <div class="product-actions">
+                            <button class="quick-view" type="button"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist" type="button"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Donat Tiramisu</h3>
+                        <div class="product-price"> 
+                            <span class="current-price">Rp 12.000</span>
+                            <!-- <span class="original-price">Rp 15.000</span> -->
+                        </div>
+                        
+                    </div>
+                </a>
+               
+            </div>
+            <div class="product-card">
+                <a href="product-detail2.html" class="product-link">
+                    <div class="product-thumb">
+                        <img src="assets/img/produk2.jpg" alt="Donat Coklat">
+                        <div class="product-actions">
+                            <button class="quick-view" type="button"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist" type="button"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Donat Coklat</h3>
+                        <div class="product-price"> 
+                            <span class="current-price">Rp 12.000</span>
+                            <!-- <span class="original-price">Rp 15.000</span> -->
+                        </div>
+                        
+                    </div>
+                </a>
+               
+            </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+
+    <!-- Footer -->
+    <footer class="main-footer" id="kontak-kami">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <!-- <span class="logo-icon"><i class="fas fa-store-alt"></i></span> -->
+                            <span class="logo-text">LumiBites</span>
+                        </a>
+                    </div>
+                    <p>Toko Jualan.</p>
+                    <div class="footer-social">
+                        <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
+                        <a href="https://www.instagram.com/lumibites.cuisine?igsh=NG93cWgyenlmM2Vs"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/6282172016503" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    
+                    </div>
+                </div>
+                
+                <div class="footer-col footer-links">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="index.html#home-kami">Home</a></li>
+                        <li><a href="index.html#tentang-kami">Tentang</a></li>
+                    <li><a href="index.html#produk-unggulan">Produk</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+                
+                <div class="footer-col footer-contact">
+                    <h3>Kontak Kami</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl.Kuansin I, Marpoyan Damai, Kota Pekanbaru, Riau</li>
+                        <li><i class="fab fa-whatsapp"></i> 0821-7201-6503</li>
+                        <li>
+    <a href="https://www.instagram.com/lumibites.cuisine?igsh=NG93cWgyenlmM2Vss" target="_blank" style="text-decoration: none; color: inherit;">
+      <i class="fab fa-instagram"></i> @lumibites
+    </a>
+    </li>
+                        <!-- <li><i class="fas fa-envelope"></i> info@namatoko.com</li> -->
+                        <li><i class="fas fa-clock"></i> Kamis-Sabtu</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- <div class="footer-bottom">
+                <div class="payment-methods">
+                    <img src="assets/images/payment-method1.png" alt="Payment Method">
+                    <img src="assets/images/payment-method2.png" alt="Payment Method">
+                    <img src="assets/images/payment-method3.png" alt="Payment Method">
+                    <img src="assets/images/payment-method4.png" alt="Payment Method">
+                </div>
+                <div class="copyright">
+                    &copy; 2023 NamaToko. All Rights Reserved.
+                </div>
+            </div> -->
+        </div>
+    </footer>
+
+
+<script>
+    const flavorButtons = document.querySelectorAll('.flavor-option');
+    let selectedFlavor = "Vanilla"; // default flavor
+
+    flavorButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            flavorButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            selectedFlavor = button.getAttribute('data-flavor');
+        });
+    });
+
+    function sendToWhatsApp() {
+        const quantity = document.getElementById("qty").value;
+        const hargaPerItem = 12000;
+        const total = quantity * hargaPerItem;
+        const message = `Halo, saya ingin memesan Donut Gula Lumibites. \nVarian: ${selectedFlavor}\nJumlah: ${quantity}\nTotal: Rp ${total.toLocaleString('id-ID')}`;
+        const url = `https://wa.me/6282172016503?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
+    }
+    
+
+    document.querySelector('.quantity-btn.plus').addEventListener('click', () => {
+        const qtyInput = document.getElementById('qty');
+        qtyInput.value = Math.min(parseInt(qtyInput.value) + 1, 12);
+    });
+
+    document.querySelector('.quantity-btn.minus').addEventListener('click', () => {
+        const qtyInput = document.getElementById('qty');
+        qtyInput.value = Math.max(parseInt(qtyInput.value) - 1, 1);
+    });
+</script>
+
+</body>
+</html>
